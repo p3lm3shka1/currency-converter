@@ -1,0 +1,153 @@
+:root {
+  --bg: #000;
+  --input: #1c1c1c;
+  --neutral: #fff;
+  --opacityBtn: #9a9a9a;
+  --before: #ff8f8f;
+  --radius: 14px;
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--neutral);
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.converter {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left-side {
+  img {
+    width: 600px;
+    display: block;
+  }
+}
+
+.right-side {
+  padding: var(--space-3) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  width: 350px;
+  display: block;
+}
+
+/* exchange section */
+#to {
+  width: 200px;
+}
+
+.exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 16px;
+    color: var(--opacityBtn);
+  }
+
+  .row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  input,
+  select {
+    background: var(--input);
+    border: none;
+    border-radius: var(--radius);
+    padding: var(--space-1);
+    color: var(--neutral);
+    font-size: 16px;
+  }
+
+  select {
+    width: 120px;
+    cursor: pointer;
+    border-radius: var(--radius);
+  }
+}
+
+/* btns */
+.buttons {
+  display: flex;
+  gap: var(--space-1);
+
+  .btn {
+    width: 170px;
+    padding: 0.9rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--neutral);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn.outline {
+    background: transparent;
+    border: 1px solid var(--neutral);
+    color: var(--neutral);
+  }
+
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}
+
+/* hidden content */
+.hidden {
+  display: none;
+}
+
+/* results */
+.result-main {
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+
+  span {
+    font-size: 25px;
+    color: var(--neutral);
+  }
+
+  span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 9px;
+    background: var(--before);
+    z-index: -1;
+    border-radius: 4px;
+  }
+}
+
+.result-rate {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--neutral);
+}

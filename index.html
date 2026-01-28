@@ -3,10 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/media.css" />
+    <title>Currency converter</title>
   </head>
   <body>
+    <main>
+      <form class="converter" id="form">
+        <!-- left side img -->
+        <div class="left-side">
+          <img src="./images/CC.png" alt="Piggy bank" />
+        </div>
+        <!-- right side -->
+        <div class="right-side">
+          <img
+            src="./images/title.png"
+            alt="Pinigu Konvertavimas"
+            class="title"
+          />
+          <!-- exchange section -->
+          <!-- exchange from -->
+          <div class="exchange">
+            <label>Turima suma</label>
+            <div class="row">
+              <input type="number" id="amount" value="1" min="0" step="0.01" />
+              <select id="from">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="PLN">PLN</option>
+              </select>
+            </div>
+            <span
+              >Įveskite savo turimą pinigų sumą ir pasirinkite valiutą.</span
+            >
+          </div>
+          <!-- exchange to -->
+          <div class="exchange">
+            <label>Norima valiuta</label>
+            <select id="to">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="PLN">PLN</option>
+            </select>
+            <span>Pasirinkite į kokią valiutą norite keisti turimą sumą.</span>
+          </div>
+          <!-- btns -->
+          <div class="buttons">
+            <button class="btn" id="convertBtn">Konvertuoti</button>
+            <button type="button" class="btn outline hidden" id="resetBtn">
+              Grįžti į pradžią
+            </button>
+          </div>
+          <!-- results -->
+          <div class="hidden" id="result">
+            <div class="result-main" id="resultMain"></div>
+            <div class="result-rate" id="resultRate"></div>
+          </div>
+        </div>
+      </form>
+    </main>
     <script src="./js/script.js" defer></script>
   </body>
 </html>

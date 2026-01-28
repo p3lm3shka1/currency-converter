@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .converter {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: var(--space-2);
+    gap: var(--space-3);
+  }
+
+  .left-side {
+    display: flex;
+    justify-content: center;
+  }
+
+  .left-side {
+    img {
+      width: 90%;
+      max-width: 400px;
+    }
+  }
+
+  .buttons .btn {
+    width: auto;
+  }
+}
+
+#result {
+  padding: var(--space-2) 0;
+}
