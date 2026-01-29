@@ -13,7 +13,7 @@
   </head>
   <body>
     <main>
-      <form class="converter" id="form">
+      <form class="converter" id="form" novalidate>
         <!-- left side img -->
         <div class="left-side">
           <img src="./images/CC.png" alt="Piggy bank" />
@@ -30,13 +30,24 @@
           <div class="exchange">
             <label>Turima suma</label>
             <div class="row">
-              <input type="number" id="amount" value="1" min="0" step="0.01" />
-              <select id="from">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="PLN">PLN</option>
-              </select>
+              <input
+                type="number"
+                id="amount"
+                placeholder="Įveskite sumą"
+                min="0"
+                step="0.01"
+              />
+              <div class="custom-select" data-name="from" data-value="EUR">
+                <button type="button" class="select-trigger">
+                  <span class="select-value">EUR</span>
+                </button>
+                <ul class="select-options">
+                  <li data-value="EUR">EUR</li>
+                  <li data-value="USD">USD</li>
+                  <li data-value="GBP">GBP</li>
+                  <li data-value="PLN">PLN</li>
+                </ul>
+              </div>
             </div>
             <span
               >Įveskite savo turimą pinigų sumą ir pasirinkite valiutą.</span
@@ -45,17 +56,26 @@
           <!-- exchange to -->
           <div class="exchange">
             <label>Norima valiuta</label>
-            <select id="to">
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="GBP">GBP</option>
-              <option value="PLN">PLN</option>
-            </select>
+            <div class="custom-select" data-name="to" data-value="EUR">
+              <button type="button" class="select-trigger to">
+                <span class="select-value">EUR</span>
+              </button>
+              <ul class="select-options">
+                <li data-value="EUR">Eurai</li>
+                <li data-value="USD">Dolariai</li>
+                <li data-value="GBP">Svarai</li>
+                <li data-value="PLN">Zlotai</li>
+              </ul>
+            </div>
+
             <span>Pasirinkite į kokią valiutą norite keisti turimą sumą.</span>
           </div>
           <!-- btns -->
           <div class="buttons">
-            <button class="btn" id="convertBtn">Konvertuoti</button>
+            <button class="btn" id="convertBtn" type="submit">
+              <span class="btn-text">Konvertuoti</span>
+              <span class="spinner hidden"></span>
+            </button>
             <button type="button" class="btn outline hidden" id="resetBtn">
               Grįžti į pradžią
             </button>
